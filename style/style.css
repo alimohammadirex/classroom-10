@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 
+@keyframes boxAnimation {
+  from {
+    transform: translate(0, 100px);
+  }
+  to {
+    transform: translate(1000px, 100px) rotate(1440deg);
+    border-radius: 50%;
+    background-color: green;
+  }
+} */
+@keyframes boxAnimation {
+  0% {
+    transform: translate(0, 100px);
+  }
+  25% {
+    transform: translate(1400px, 100px) rotate(360deg);
+    border-radius: 50%;
+    background-color: green;
+  }
+
+  50% {
+    transform: translate(1400px, 500px) rotate(0);
+  }
+
+  75% {
+    transform: translate(100px, 500px) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, 100px);
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  /* background-image: linear-gradient(75deg, red, yellow, magenta, blue); */
+  /* background-image: radial-gradient(red 10%, yellow, magenta, blue, black 40%); */
+  /* background: #020024; */
+  /* background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 55%,
+    rgba(0, 212, 255, 1) 99%
+  ); */
+
+  background-repeat: no-repeat;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  transform: translate(0, 100px);
+  background-color: red;
+  transition-property: all;
+  transition-duration: 0.3s;
+  animation-iteration-count: infinite;
+  transition-timing-function: ease-in-out;
+  transition-delay: 5s;
+
+  transition: all 0.3s ease-in-out 5s;
+  animation-name: boxAnimation;
+  animation-duration: 5s;
+  animation-delay: 5s;
+  animation-direction: alternate-reverse;
+
+  box-shadow:
+    100px 100px 20px #dfdfdf7a,
+    100px 100px 20px #8300007a;
+
+  /* transform: rotate(150deg) scale(0.5) translate(200px) ; */
+  /* transform: translate(200px , 100px) skew(120deg) ; */
+  /* transform: rotateX(45deg); */
+
+  /* matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) */
+}
+.box:hover {
+  transform: matrix(1, -0.3, 0, 1, 0, 50);
+  background-color: green;
+}
